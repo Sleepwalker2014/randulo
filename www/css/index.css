@@ -24,52 +24,49 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
-    margin:0px;
-    padding:0px;
+    margin: 0px;
     text-transform:uppercase;
     width:100%;
+    left: 0px;
+    right: 0px;		
+}
 
-background: #74ebd5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+html {
+    height: 100%;
+    background: #74ebd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+
+.doubleLineHeight input {
+    margin-bottom: 10px;
+}
+
+input {
+border: none;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 @media (min-resolution: 130dpi) { 
 /* everything here applies for high-res screens */
-input[type=text] {
-
-height: 100px;
+input {
+    height: 40px;
 }
  
 }
 
-/* Portrait layout (default) */
-.app {
-    position:absolute;             /* position in the center of the screen */
-
-    height:100%;                   /* text area height */
-    width:100%;                   /* text area width */
-    text-align:center;
-
-
-                                   /* offset horizontal: half of text area width */
-background: #74ebd5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-}
 
 #test {
     position:absolute;             /* position in the center of the screen */
     left:0px;
     top: 0px;
-    height:100px;                   /* text area height */
+    height:0px;                   /* text area height */
     width:100px;                   /* text area width */
 }
 
@@ -80,7 +77,8 @@ background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Fir
 
 /*
         background-position:left center;
-        padding:75px 0px 75px 170px;  
+        
+padding:75px 0px 75px 170px;  
         margin:-90px 0px 0px -198px;*/  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
@@ -100,8 +98,7 @@ h1 {
     -webkit-border-radius:4px;
     color:#FFFFFF;
     font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+
 }
 
 .event.listening {
@@ -117,7 +114,7 @@ h1 {
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+   to { opacity: 1.0; }
 }
  
 @-webkit-keyframes fade {
