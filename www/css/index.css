@@ -28,6 +28,7 @@ body {
     font-size:12px;
     height:100%;
     margin: 0px;
+    padding: 0px;
     text-transform:uppercase;
     width:100%;
     left: 0px;
@@ -45,12 +46,17 @@ html {
 .doubleLineHeight input {
     margin-bottom: 10px;
 }
+.doubleLineHeight {
+width: 100%;
+display: inline-block;
+}
 
 input {
-border: none;
     width: 90%;
     margin-left: 5%;
-    margin-right: 5%;
+    margin-right: auto;
+    border: none;
+    padding: 0;
 }
 
 @media (min-resolution: 130dpi) { 
