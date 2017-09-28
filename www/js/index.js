@@ -28,6 +28,11 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+
+        var div = document.getElementById("map");
+
+        // Initialize the map view
+        var map = plugin.google.maps.Map.getMap(div);
     },
 
     // Update DOM on a Received Event

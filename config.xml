@@ -24,5 +24,10 @@
     </platform>
     <engine name="android" spec="^6.2.3" />
     <engine name="browser" spec="^4.1.0" />
+    <plugin name="cordova-plugin-device" spec="^1.1.6" />
+    <plugin name="cordova-plugin-googlemaps" spec="^2.0.11">
+        <variable name="API_KEY_FOR_ANDROID" value="YOUR_ANDROID_API_KEY_IS_HERE" />
+        <variable name="AIzaSyDRIpoFH93IknmVf-o5n-B138-KUnIPXz8" value="YOUR_ANDROID_API_KEY_IS_HERE" />
+    </plugin>
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
 </widget>
