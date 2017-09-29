@@ -18,39 +18,54 @@
     under the License.
 -->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-    <div id="deviceready">
-        <p class="event listening">Connecting to Device</p>
-        <p class="event received">Device is Ready</p>
-    </div>
-   <div class="doubleLineHeight">
-       <input type="date" placeholder="verfügbar von" max="1979-12-31">
-       <input type="date" placeholder="bis" max="1979-12-31">
-     <input type="text" placeholder="Wo?">
-    <input type="text" placeholder="Preis von">	
-    <input type="text" placeholder="bis"></div>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection"
+          content="telephone=no">
+    <meta name="msapplication-tap-highlight"
+          content="no">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>Hello World</title>
 
-   <div id="map"></div>
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/index.css">
+</head>
+<body>
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    <script src="js/main.js"></script>
-    </body>
+<div class="app">
+
+    <div id="map"></div>
+    <div class="doubleLineHeight">
+    <input type="date"
+           placeholder="verfügbar von"
+           max="1979-12-31">
+    <input type="date"
+           placeholder="bis"
+           max="1979-12-31">
+    <input type="text"
+           placeholder="Wo?">
+    <input type="text"
+           placeholder="Preis von">
+    <input type="text"
+           placeholder="bis"></div>
+</div>
+
+<script type="text/javascript"
+        src="cordova.js"></script>
+<script type="text/javascript"
+        src="js/index.js"></script>
+<script src="js/main.js"></script>
+</body>
 </html>

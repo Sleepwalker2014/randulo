@@ -12,7 +12,6 @@
     "dependencies": {
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
-        "cordova-plugin-device": "^1.1.6",
         "cordova-plugin-googlemaps": "^2.0.11",
         "cordova-plugin-whitelist": "^1.3.2"
     },
@@ -20,10 +19,8 @@
         "plugins": {
             "cordova-plugin-whitelist": {},
             "cordova-plugin-googlemaps": {
-                "API_KEY_FOR_ANDROID": "YOUR_ANDROID_API_KEY_IS_HERE",
-                "AIzaSyDRIpoFH93IknmVf-o5n-B138-KUnIPXz8": "YOUR_ANDROID_API_KEY_IS_HERE"
-            },
-            "cordova-plugin-device": {}
+                "API_KEY_FOR_ANDROID": "AIzaSyAT6prI_pAWwPMV0VWQBVLtMTQDecbuWKc"
+            }
         },
         "platforms": [
             "android",

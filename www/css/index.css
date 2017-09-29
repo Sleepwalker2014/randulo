@@ -16,9 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
 
 #map {
     height: 400px;
@@ -39,7 +36,7 @@ body {
     text-transform:uppercase;
     width:100%;
     left: 0px;
-    right: 0px;		
+    right: 0px;
 }
 
 html {
@@ -112,16 +109,6 @@ h1 {
     color:#FFFFFF;
     font-size:12px;
 
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
 }
 
 @keyframes fade {
