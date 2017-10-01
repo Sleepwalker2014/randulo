@@ -17,42 +17,42 @@
  * under the License.
  */
 
-#map {
-    height: 400px;
+html {
+    position: fixed;
+    height: 100%;
     width: 100%;
-    left: 0px;
+    top: 0;
+    left: 0;
+    background: #74ebd5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+#map {
+    position: inherit;
+    height: 100%;
+    width: 100%;
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
+    position: inherit;
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
     margin: 0px;
     padding: 0px;
-    text-transform:uppercase;
-    width:100%;
-    left: 0px;
-    right: 0px;
-}
-
-html {
-    height: 100%;
-    background: #74ebd5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    text-transform: uppercase;
 }
 
 .doubleLineHeight input {
     margin-bottom: 10px;
 }
+
 .doubleLineHeight {
-width: 100%;
-display: inline-block;
+    position: inherit;
+    width: 100%;
 }
 
 input {
@@ -63,67 +63,77 @@ input {
     padding: 0;
 }
 
-@media (min-resolution: 130dpi) { 
-/* everything here applies for high-res screens */
-input {
-    height: 40px;
-}
- 
-}
+@media (min-resolution: 130dpi) {
+    /* everything here applies for high-res screens */
+    input {
+        height: 40px;
+    }
 
+}
 
 #test {
-    position:absolute;             /* position in the center of the screen */
-    left:0px;
+    position: absolute; /* position in the center of the screen */
+    left: 0px;
     top: 0px;
-    height:0px;                   /* text area height */
-    width:100px;                   /* text area width */
+    height: 0px; /* text area height */
+    width: 100px; /* text area width */
 }
 
-
 /* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
     .app {
 
-/*
-        background-position:left center;
-        
-padding:75px 0px 75px 170px;  
-        margin:-90px 0px 0px -198px;*/  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
+        /*
+                background-position:left center;
+
+        padding:75px 0px 75px 170px;
+                margin:-90px 0px 0px -198px;*/ /* offset vertical: half of image height */
+        /* offset horizontal: half of image width and text area width */
     }
 }
 
 h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
 }
 
 .event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
 
 }
 
 @keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-   to { opacity: 1.0; }
+    from {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1.0;
+    }
 }
- 
+
 @-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+    from {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1.0;
+    }
 }
- 
+
 .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
 }
