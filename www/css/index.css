@@ -23,6 +23,8 @@ html {
     width: 100%;
     top: 0;
     left: 0;
+    margin: 0px;
+    padding: 0px;
     background: #74ebd5; /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -53,6 +55,7 @@ body {
 .doubleLineHeight {
     position: inherit;
     width: 100%;
+    background-color: #4B946A;
 }
 
 input {
@@ -71,13 +74,15 @@ input {
 
 }
 
-#test {
-    position: absolute; /* position in the center of the screen */
-    left: 0px;
-    top: 0px;
-    height: 0px; /* text area height */
-    width: 100px; /* text area width */
+#overlayDiv {
+    position: inherit;
+    bottom: 0;
+    left:0px;
+    width: 100%;
+    height: 100px;
+    background-color: #4B946A;
 }
+
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
@@ -106,7 +111,6 @@ h1 {
     -webkit-border-radius: 4px;
     color: #FFFFFF;
     font-size: 12px;
-
 }
 
 @keyframes fade {
