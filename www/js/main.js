@@ -12,6 +12,10 @@ document.addEventListener("deviceready", function () {
     $(".doubleLineHeight").mousemove(function (e) {
         $(this).height(e.pageY);
     });
+
+    $( ".doubleLineHeight" ).on( "touchmove", function( event ) {
+        $(this).height(event.targetTouches[0].pageY);
+    });
 }, false);
 
 function onMapReady () {
