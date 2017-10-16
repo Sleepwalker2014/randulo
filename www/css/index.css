@@ -30,6 +30,13 @@ html {
     background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+#bomb {
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
 #map {
     position: inherit;
     height: 100%;
@@ -56,6 +63,7 @@ body {
     position: inherit;
     width: 100%;
     background-color: #4B946A;
+    overflow: hidden;
 }
 
 input {

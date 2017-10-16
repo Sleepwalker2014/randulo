@@ -39,30 +39,35 @@
     <title>Hello World</title>
 
     <link rel="stylesheet"
+          href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
           type="text/css"
           href="css/index.css">
 </head>
 <body>
 <div id="map"></div>
-    <div class="doubleLineHeight">
-    <input type="date"
-           placeholder="verfügbar von"
-           max="1979-12-31">
-    <input type="date"
-           placeholder="bis"
-           max="1979-12-31">
-    <input type="text"
-           placeholder="Wo?">
-    <input type="text"
-           placeholder="Preis von">
-    <input type="text"
-           placeholder="bis">
-    <div id="bomb"><< >></div>
+<div class="doubleLineHeight">
+    <div id="inputFields">
+        <input type="date"
+               placeholder="verfügbar von"
+               max="1979-12-31">
+        <input type="date"
+               placeholder="bis"
+               max="1979-12-31">
+        <input type="text"
+               placeholder="Wo?">
+        <input type="text"
+               placeholder="Preis von">
+        <input type="text"
+               placeholder="bis">
     </div>
-
+    <i id="bomb" class="fa fa-arrow-circle-down fa-5x"></i>
+</div>
 
 <script type="text/javascript"
         src="cordova.js"></script>
+<script type="text/javascript"
+        src="vendor/components/jquery/jquery.min.js"></script>
 <script type="text/javascript"
         src="js/index.js"></script>
 <script src="js/main.js"></script>
