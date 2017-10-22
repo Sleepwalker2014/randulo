@@ -1,4 +1,7 @@
 document.addEventListener("deviceready", function () {
+    yOffset = 0;
+    positionOffset = 0;
+
     var div = document.getElementById("map");
     // Initialize the map view
     var map = plugin.google.maps.Map.getMap(div);
@@ -6,23 +9,28 @@ document.addEventListener("deviceready", function () {
     // Wait until the map is ready status.
     map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
 
-    element2 = document.getElementById("bomb");
-    element2.addEventListener("click", hide);
+    $(".doubleLineHeight").on("touchmove", function (event) {
+         var newPosition = positionOffset + (event.targetTouches[0].pageY - yOffset);
 
-    $(".doubleLineHeight").mousemove(function (e) {
-        $(this).height(e.pageY);
+         if (newPosition < 0) {
+             return false;
+         }
+
+        $(this).css({top: newPosition});
     });
 
-    $( ".doubleLineHeight" ).on( "touchmove", function( event ) {
-        $(this).height(event.targetTouches[0].pageY);
+    $(".doubleLineHeight").on("touchstart", function (event) {
+        yOffset = event.targetTouches[0].pageY;
+        var pos =  $(this).position();
+        positionOffset = pos.top;
     });
 }, false);
 
-function onMapReady () {
+function onMapReady() {
 
 }
 
-function hide () {
+function hide() {
     $("#inputFields").animate({
         height: "toggle"
     }, 400, function () {
