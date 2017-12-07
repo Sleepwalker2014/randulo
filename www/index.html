@@ -18,58 +18,91 @@
     under the License.
 -->
 <html>
-<head>
-    <!--
-    Customize this policy to fit your own app's needs. For more guidance, see:
-        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-    Some notes:
-        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-            * Enable inline JS: add 'unsafe-inline' to default-src
-    -->
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-    <meta name="format-detection"
-          content="telephone=no">
-    <meta name="msapplication-tap-highlight"
-          content="no">
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <title>Hello World</title>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy"
+              content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection"
+              content="telephone=no">
+        <meta name="msapplication-tap-highlight"
+              content="no">
+        <meta name="viewport"
+              content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>Hello World</title>
 
-    <link rel="stylesheet"
-          href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-          type="text/css"
-          href="css/index.css">
-</head>
-<body>
-<div id="map"></div>
-<div class="doubleLineHeight">
-    <div id="inputFields">
-        <input type="date"
-               placeholder="verfügbar von"
-               max="1979-12-31">
-        <input type="date"
-               placeholder="bis"
-               max="1979-12-31">
-        <input type="text"
-               placeholder="Wo?">
-        <input type="text"
-               placeholder="Preis von">
-        <input type="text"
-               placeholder="bis">
-    </div>
-    <i id="bomb" class="fa fa-arrow-circle-down fa-5x"></i>
-</div>
+        <link rel="stylesheet"
+              href="vendor/twbs/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet"
+              href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="css/index.css">
+    </head>
+    <body>
 
-<script type="text/javascript"
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input placeholder="Email" class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Password" class="form-control" type="password">
+                        </div>
+                        <button type="submit" class="btn btn-success">Sign in</button>
+                    </form>
+                </div><!--/.navbar-collapse -->
+            </div>
+        </nav>
+
+        <!--
+         Main jumbotron for a primary marketing message or call to action
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Hello, world!</h1>
+                <p>This is a template for a simple marketing or informational website. It includes a large callout called a
+                    jumbotron and three supporting pieces of content. Use it as a starting point to create something more
+                    unique.</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+            </div>
+        </div>
+        -->
+
+        <div id="map" class="container page-header">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div id="maincontent" class="col-md-12">
+                </div>
+            </div>
+        </div> <!-- /container -->
+
+        <script type="text/javascript"
         src="cordova.js"></script>
-<script type="text/javascript"
+        <script type="text/javascript"
         src="vendor/components/jquery/jquery.min.js"></script>
-<script type="text/javascript"
+        <script type="text/javascript"
+        src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript"
+        src="js/main.js"></script>
+        <script type="text/javascript"
         src="js/index.js"></script>
-<script src="js/main.js"></script>
-</body>
+    </body>
 </html>

@@ -10,11 +10,11 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "cordova-plugin-googlemaps": {
-            "API_KEY_FOR_ANDROID": "YOUR_ANDROID_API_KEY_IS_HERE",
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "cordova-plugin-device": {
+        "cordova-plugin-googlemaps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyAW46ZPLl3DOIPtPJI6xzsa0A2M8ucZIok",
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
