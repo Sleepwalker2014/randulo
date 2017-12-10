@@ -18,16 +18,31 @@
  */
 
 
-#map {
-    background-color: green;
+#map, #mainContainer {
     min-height: calc(100vh - 40px);
     margin-bottom: 0;
+    background-color: #FFBD33;
+}
+.list-group-item {
+    margin-bottom: 10px;
+}
+
+#spinContent {
+    background-color: #FFBD33;
+    min-height: calc(100vh - 40px);
+    vertical-align: middle;
+    text-align: center;
 }
 
 body {
+    background-color: #FFBD33;
     -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
     -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+html {
+    background-color: #FFBD33;
 }
 
 #overlayDiv {

@@ -1,4 +1,5 @@
 document.addEventListener("deviceready", function () {
+
     yOffset = 0;
     positionOffset = 0;
 
@@ -10,28 +11,41 @@ document.addEventListener("deviceready", function () {
     map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
 
     $(".doubleLineHeight").on("touchmove", function (event) {
-         var newPosition = positionOffset + (event.targetTouches[0].pageY - yOffset);
+        var newPosition = positionOffset + (event.targetTouches[0].pageY - yOffset);
 
-         if (newPosition < 0) {
-             return false;
-         }
+        if (newPosition < 0) {
+            return false;
+        }
 
         $(this).css({top: newPosition});
     });
 
     $(".doubleLineHeight").on("touchstart", function (event) {
         yOffset = event.targetTouches[0].pageY;
-        var pos =  $(this).position();
+        var pos = $(this).position();
         positionOffset = pos.top;
     });
 
-    $.get("html/list.html", function (data) {
-        $("#maincontent").html(data);
+    $("#list").on("click", function (event) {
+        $.get("html/list.html", function (data) {
+            $('.navbar-toggle').click()
+            $("#maincontent").html(data);
+            $("#map").hide();
+            $("#mainContainer").show();
+        });
     });
+
+    $("#mapIcon").on("click", function (event) {
+        $('.navbar-toggle').click()
+        $.get("html/list.html", function (data) {
+            $("#mainContainer").hide();
+            $("#map").show();
+        });
+    });
+
 }, false);
 
 function onMapReady() {
-
 }
 
 function hide() {
