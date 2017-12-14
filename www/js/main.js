@@ -1,3 +1,5 @@
+var map;
+
 document.addEventListener("deviceready", function () {
 
     yOffset = 0;
@@ -5,26 +7,10 @@ document.addEventListener("deviceready", function () {
 
     var div = document.getElementById("map");
     // Initialize the map view
-    var map = plugin.google.maps.Map.getMap(div);
+    map = plugin.google.maps.Map.getMap(div);
 
     // Wait until the map is ready status.
     map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
-
-    $(".doubleLineHeight").on("touchmove", function (event) {
-        var newPosition = positionOffset + (event.targetTouches[0].pageY - yOffset);
-
-        if (newPosition < 0) {
-            return false;
-        }
-
-        $(this).css({top: newPosition});
-    });
-
-    $(".doubleLineHeight").on("touchstart", function (event) {
-        yOffset = event.targetTouches[0].pageY;
-        var pos = $(this).position();
-        positionOffset = pos.top;
-    });
 
     $("#list").on("click", function (event) {
         $.get("html/list.html", function (data) {
@@ -46,6 +32,31 @@ document.addEventListener("deviceready", function () {
 }, false);
 
 function onMapReady() {
+    map.addMarker({
+        position: {lat: 37.422359, lng: -122.084344},
+        title: "man",
+        snippet: "This plugin is awesome!",
+        animation: plugin.google.maps.Animation.BOUNCE
+    }, function (marker) {
+        marker.showInfoWindow();
+
+        marker.on(plugin.google.maps.event.INFO_CLICK, function () {
+
+        });
+    });
+    
+        map.addMarker({
+        position: {lat: 32.422359, lng: -122.084344},
+        title: "fart",
+        snippet: "This plugin is awesome!",
+        animation: plugin.google.maps.Animation.BOUNCE
+    }, function (marker) {
+        marker.showInfoWindow();
+
+        marker.on(plugin.google.maps.event.INFO_CLICK, function () {
+
+        });
+    });
 }
 
 function hide() {
