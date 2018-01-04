@@ -1,10 +1,9 @@
 var map;
 
 document.addEventListener("deviceready", function () {
+       navigator.splashscreen.hide();
 
-    yOffset = 0;
-    positionOffset = 0;
-
+    loadPage("html/markerPage.html");
     var div = document.getElementById("map");
     // Initialize the map view
     map = plugin.google.maps.Map.getMap(div);
@@ -12,50 +11,59 @@ document.addEventListener("deviceready", function () {
     // Wait until the map is ready status.
     map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
 
+    map.on(plugin.google.maps.event.MAP_CLICK, function (latLng) {
+        openMarkerAddPage();
+    });
+
     $("#list").on("click", function (event) {
         $.get("html/list.html", function (data) {
-            $('.navbar-toggle').click()
+            $('.navbar-collapse').collapse('hide');
             $("#maincontent").html(data);
-            $("#map").hide();
-            $("#mainContainer").show();
+            showMainContent();
         });
     });
 
-    $("#mapIcon").on("click", function (event) {
-        $('.navbar-toggle').click()
-        $.get("html/list.html", function (data) {
-            $("#mainContainer").hide();
-            $("#map").show();
-        });
+    $("#mapIcon, #mapButton").on("click", function (event) {
+        showMap();
     });
-
+    
+    $('body').on('click', "#showMap", function (event) {
+        showMap();
+    });
 }, false);
 
 function onMapReady() {
-    map.addMarker({
+     map.addMarker({
         position: {lat: 37.422359, lng: -122.084344},
         title: "man",
         snippet: "This plugin is awesome!",
-        animation: plugin.google.maps.Animation.BOUNCE
+        animation: plugin.google.maps.Animation.BOUNCE,
+        id: 1
     }, function (marker) {
         marker.showInfoWindow();
 
         marker.on(plugin.google.maps.event.INFO_CLICK, function () {
-
+            $.ajax({
+                url: "html/markerPage.html",
+                cache: false
+            }).done(function (html) {
+                $('#maincontent').html(html);
+                $("#map").hide();
+                $('#mainContainer').show();
+            });
         });
     });
-    
-        map.addMarker({
-        position: {lat: 32.422359, lng: -122.084344},
-        title: "fart",
-        snippet: "This plugin is awesome!",
-        animation: plugin.google.maps.Animation.BOUNCE
-    }, function (marker) {
-        marker.showInfoWindow();
+}
 
-        marker.on(plugin.google.maps.event.INFO_CLICK, function () {
+function openMarkerAddPage(latLng) {
+    loadPage('html/addMarker.html');
+}
 
-        });
+function loadPage(page) {
+    $.get(page, function (data) {
+        $('.navbar-collapse').collapse('hide');
+        $("#maincontent").html(data);
+        showMainContent();
     });
 }
 
@@ -65,4 +73,15 @@ function hide() {
     }, 400, function () {
         // Animation complete.
     });
+}
+
+function showMainContent() {
+    $("#map").hide();
+    $("#mainContainer").show();
+}
+
+function showMap() {
+    $('.navbar-collapse').collapse('hide');
+    $("#mainContainer").hide();
+    $("#map").show();
 }
